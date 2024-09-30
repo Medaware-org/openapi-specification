@@ -23,3 +23,29 @@ paths:
             text/plain:
               schema:
                 type: string
+
+  /antg/compile:
+    post:
+      operationId: compileAnterogradia
+      summary: Compile Anterogradia sources
+      tags:
+        - Anterogradia
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        200:
+          description: Compilation successful
+          content:
+            text/html:
+              schema:
+                type: string
+        422:
+          description: Compilation failed with error
+          content:
+            text/plain:
+              schema:
+                type: string
