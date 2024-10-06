@@ -189,29 +189,23 @@ paths:
       responses:
         200:
           description: Element deleted
-
-  /tan/alter/{id}:
-    post:
+    put:
       operationId: alterElement
       summary: Switch the element to a different type
       tags:
         - Tangential-Content
-      parameters:
-        - in: path
-          name: id
-          description: Element ID
-          required: true
-          schema:
-            type: string
-            format: uuid
       requestBody:
         required: true
         content:
           application/json:
             schema:
               required:
+                - id
                 - type
               properties:
+                id:
+                  type: string
+                  format: uuid
                 type:
                   type: string
       responses:
