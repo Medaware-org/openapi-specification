@@ -64,6 +64,22 @@ paths:
               schema:
                 $ref: "#/components/schemas/tangentialSessionResponse"
 
+  /tan/profile:
+    put:
+      operationId: updateProfileDetails
+      summary: Update profile details in the system
+      tags:
+        - Tangential-Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/accountUpdateRequest"
+      responses:
+        200:
+          description: Account info was updates
+
   /tan/logout:
     post:
       operationId: tangentialLogout
@@ -443,3 +459,13 @@ components:
       type: array
       items:
         $ref: "#/components/schemas/elementResponse"
+
+    accountUpdateRequest:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        displayName:
+          type: string
