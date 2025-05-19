@@ -599,8 +599,6 @@ components:
         id:
           type: string
           format: uuid
-        topic:
-          $ref: "#/components/schemas/topicResponse"
 
     articleCreationRequest:
       type: object
