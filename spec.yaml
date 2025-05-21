@@ -669,6 +669,7 @@ components:
         - title
         - date
         - topic
+        - authorId
       properties:
         author:
           type: string
@@ -678,6 +679,9 @@ components:
           type: string
           format: date
         id:
+          type: string
+          format: uuid
+        authorId:
           type: string
           format: uuid
 
